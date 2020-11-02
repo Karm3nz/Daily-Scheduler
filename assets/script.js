@@ -21,10 +21,107 @@
     // THEN the saved events persist
 
 
-// function to display current day at the top of the calendar
-    function getCurrentDate(){
-        var currentDate = moment().format('MMMM Do YYYY');
-        $("#currentDay").text(currentDate);
-    }
-    getCurrentDate();
+var hour9 = $("#9");
+var hour10 = $("#10");
+var hour11 = $("#11");
+var hour12 = $("#12");
+var hour1 = $("#13");
+var hour2 = $("#14");
+var hour3 = $("#15");
+var hour4 = $("#16");
+var hour5 = $("#17");
 
+var time = moment();
+
+// Setting header date, retrieving stored data from local storage
+function setPlanner() {
+
+    $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
+
+    $(".time-block").each(function () {
+        var id = $(this).attr("id");
+        var schedule = localStorage.getItem(id);
+        //For each time block, it will grab the respecting scheduled values 
+        if (schedule !== null) {
+            $(this).children(".schedule").val(schedule);
+        }
+    });
+}
+
+setPlanner();
+var saveBtn = $(".saveBtn");
+
+// When save btn is clicked, each time blocks' attributes and values are stored to local storage
+saveBtn.on("click", function () {
+    var time = $(this).parent().attr("id");
+    var schedule = $(this).siblings(".schedule").val();
+    localStorage.setItem(time, schedule);
+});
+
+function pastPresentFuture() {
+    var currentHour = time.hours();
+    //Grabbing the hour that each time block represents, we then compare to the current time, to display the correct colour-code on each time block.
+    $(".time-block").each(function () {
+        var thisHour = parseInt($(this).attr("id"));
+
+        if (thisHour > currentHour) {
+            $(this).addClass("future")
+        }
+        else if (thisHour === currentHour) {
+            $(this).addClass("present");
+        }
+        else {
+            $(this).addClass("past");
+        }
+    })
+}
+
+pastPresentFuture();
+
+
+
+
+
+//ASIDE
+//==============================================================================
+// function displayPlanner() {
+//     JSON.parse(window.localStorage.getItem(time, schedule));
+// };
+
+// // function to display current day at the top of the calendar
+// function getCurrentDate(){
+//     var currentDate = moment().format('MMMM Do YYYY');
+//     $("#currentDay").text(currentDate);
+// }
+// getCurrentDate();
+
+
+// // set and get schedules from local storage
+
+// function setSchedule() {
+
+// $(".time-block").each(function () {
+//     var id = $(this).attr("id");
+//     var schedule = localStorage.getItem(id);
+
+//     if (schedule !== null) {
+//         $(this).children(".schedule").val(schedule);
+//     }
+// });
+// }
+
+// setSchedule();
+
+
+// //Save 
+// var saveBtn = $(".saveBtn");
+
+// saveBtn.on("click", function () {
+// saveBtn.forEach(function() {
+//     saveBtn.addClass("saveBtn i:hover")
+// })
+// var time = $(this).parent().attr("id");
+// var schedule = $(this).siblings(".schedule").val();
+
+// localStorage.setItem(time, schedule);
+// });
