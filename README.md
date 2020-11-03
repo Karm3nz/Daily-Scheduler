@@ -2,22 +2,13 @@
 
 ## Description 
 
-Your GitHub profile is an extremely important aspect of your public identity as a developer. A well-crafted one allows you to show off your work to other developers as well as potential employers. An important component of your GitHub profile—and one that many new developers often overlook—is the README.md file.
+From personal use, to business use, to educational use, a productive day starts with a plan. In order to get the most out of the day, planning out an idea of what the day looks like at they start of the say, sets our users up for success to acheive daily goals! 
 
-The quality of a README often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase what your application does, justify the technologies used, and even talk about some of the challenges you faced and features you hope to implement in the future. A good README helps you stand out among the large crowd of developers putting their work on GitHub.
+Features of the web application Day Schduler includes: displaying the current date in the header, displaying hour "blocks" from 9am to 5pm, inputting schedules in respecting hour blocks, colour-coding of hour blocks (to reflect whether the schedule in the past, present, or future), and allowing users to save their schedule to local storage. 
 
-There's no one right way to structure a good README. There is one very wrong way, however, and that is to not include a README at all or to create a very anemic one. This guide outlines a few best practices. As you progress in your career, you will develop your own ideas about what makes a good README.
-
-At a minimum, your project README needs a title and a short description explaining the what, why, and how. What was your motivation? Why did you build this project? (Note: The answer is not "Because it was a homework assignment.") What problem does it solve? What did you learn? What makes your project stand out? If your project has a lot of features, consider adding a heading called "Features" and listing them here.
-
-If you're new to Markdown, read the GitHub guide on [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
-
-If you need an example of a good README, check out [the VSCode repository](https://github.com/microsoft/vscode).
-
+In this project, I had difficulties with making sure that the "present" colour-code was showing up, as well as figuring out what "this" in the code was referring to in various scenarios. It took numerous console logging in various places, trial and error, looking up functions to become more familiar with the "how" and the "why" aspect of why the code works. From this project, the most valuable piece of information I learned is how "this" makes it so much easier to navigate around the HTML file and grab ids/classes.
 
 ## Table of Contents
-
-If your README is very long, add a table of contents to make it easy for users to find what they need.
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -35,8 +26,13 @@ If your README is very long, add a table of contents to make it easy for users t
 
 ## Usage 
 
-Provide instructions and examples for use. Include screenshots as needed. 
+To arrive at the Daily Scheduler web application, type in :  https://karm3nz.github.io/Daily-Scheduler/ on the address bar on the web browser and hit the "enter" key. 
 
+![Day Scheduler Home Screenshot](day_scheduler_homePage.png)
+
+Here we see that listed down the page are the time blocks for each hour with corresponding area for the user to input their schedule data. The user can plan their day by clicking the input textbox next to the corresponding hour (that the schedule is to be scheduled), and typing on the keyboard its description. Afterwards click the corresponding "save" button (with the floppy disk icon) to save the schedule input. Should user need to change saved schedule data, user can once again click the very input textbox to edit/correct the schedule, and click the save button to overwrite prior saved schedule.
+
+![Day Scheduler User Inputting Schedule Data](day_scheduler_insertSchedule.png)
 
 ## Credits
 
@@ -51,6 +47,7 @@ https://icons8.com/icons/set/save
 
 Extracting current "hour" from moment() :
 https://stackoverflow.com/questions/27978819/extract-time-from-moment-js-object
+https://github.com/lbmoody/simple-day-planner
 
 Getting the current date/time:
 https://momentjs.com/
@@ -58,10 +55,24 @@ https://momentjs.com/
 
 ## License
 
-The last section of a good README is a license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, use [https://choosealicense.com/](https://choosealicense.com/)
+MIT License
 
+Copyright (c) [2020] [Carmen Hui]
 
----
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-🏆 The sections listed above are the minimum for a good README, but your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
