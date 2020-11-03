@@ -2,7 +2,7 @@
 
 // Steps to execute tasks:
 // GIVEN I am using a daily planner to create a schedule
-//1) DONE!!!
+//1) 
     // WHEN I open the planner
     // THEN the current day is displayed at the top of the calendar
     // WHEN I scroll down
@@ -40,8 +40,9 @@ function setPlanner() {
 
     $(".time-block").each(function () {
         var id = $(this).attr("id");
+        //Saving to local storage
         var schedule = localStorage.getItem(id);
-        //For each time block, it will grab the respecting scheduled values 
+        //For each time block, it will have the respecting scheduled values 
         if (schedule !== null) {
             $(this).children(".schedule").val(schedule);
         }
@@ -59,10 +60,14 @@ saveBtn.on("click", function () {
 });
 
 function pastPresentFuture() {
-    var currentHour = time.hours();
+    var currentHour = parseInt(moment().format("HH"));
+    console.log("What is the current hour:", currentHour);
+
     //Grabbing the hour that each time block represents, we then compare to the current time, to display the correct colour-code on each time block.
     $(".time-block").each(function () {
         var thisHour = parseInt($(this).attr("id"));
+        console.log("what is this", this);
+        console.log("what is this hour", thisHour);
 
         if (thisHour > currentHour) {
             $(this).addClass("future")
@@ -70,7 +75,7 @@ function pastPresentFuture() {
         else if (thisHour === currentHour) {
             $(this).addClass("present");
         }
-        else {
+        else if (thisHour < currentHour){
             $(this).addClass("past");
         }
     })
@@ -80,10 +85,32 @@ pastPresentFuture();
 
 
 
-
-
 //ASIDE
 //==============================================================================
+
+// function pastPresentFuture() {
+//     var hour = time.hours();
+//     //Grabbing the hour that each time block represents, we then compare to the current time, to display the correct colour-code on each time block.
+//     $(".time-block").each(function () {
+//         var thisHour = parseInt($(this).attr("id"));
+
+//         if (thisHour > hour) {
+//             $(this).addClass("future")
+//         }
+//         else if (thisHour === hour) {
+//             $(this).addClass("present");
+//         }
+//         else {
+//             $(this).addClass("past");
+//         }
+//     })
+// }
+
+// pastPresentFuture();
+
+
+
+
 // function displayPlanner() {
 //     JSON.parse(window.localStorage.getItem(time, schedule));
 // };
