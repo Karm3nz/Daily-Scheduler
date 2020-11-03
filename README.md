@@ -48,9 +48,11 @@ https://icons8.com/icons/set/save
 Extracting current "hour" from moment() :
 https://stackoverflow.com/questions/27978819/extract-time-from-moment-js-object
 https://github.com/lbmoody/simple-day-planner
+https://flaviocopes.com/momentjs/
 
 Getting the current date/time:
 https://momentjs.com/
+
 
 
 ## License
