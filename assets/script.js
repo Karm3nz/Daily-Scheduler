@@ -1,6 +1,5 @@
 //Javascript for Daily Scheduler
 
-// Steps to execute tasks:
 // GIVEN I am using a daily planner to create a schedule
 //1) 
     // WHEN I open the planner
@@ -19,19 +18,6 @@
     // THEN the text for that event is saved in local storage
     // WHEN I refresh the page
     // THEN the saved events persist
-
-
-var hour9 = $("#9");
-var hour10 = $("#10");
-var hour11 = $("#11");
-var hour12 = $("#12");
-var hour1 = $("#13");
-var hour2 = $("#14");
-var hour3 = $("#15");
-var hour4 = $("#16");
-var hour5 = $("#17");
-
-var time = moment();
 
 // Setting header date, retrieving stored data from local storage
 function setPlanner() {
@@ -61,13 +47,13 @@ saveBtn.on("click", function () {
 
 function pastPresentFuture() {
     var currentHour = parseInt(moment().format("HH"));
-    console.log("What is the current hour:", currentHour);
+    // console.log("What is the current hour:", currentHour);
 
     //Grabbing the hour that each time block represents, we then compare to the current time, to display the correct colour-code on each time block.
     $(".time-block").each(function () {
         var thisHour = parseInt($(this).attr("id"));
-        console.log("what is this", this);
-        console.log("what is this hour", thisHour);
+        // console.log("what is this", this);
+        // console.log("what is this hour", thisHour);
 
         if (thisHour > currentHour) {
             $(this).addClass("future")
