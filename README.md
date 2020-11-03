@@ -31,7 +31,7 @@ If your README is very long, add a table of contents to make it easy for users t
 2) Check if an internet browswer is installed. If so, go to step 4).
 3) Install an internet browser of your choice. 
 4) Open up internet web browser.
-5) In the address bar, type in :  < URL > and hit "enter" on the keyboard.
+5) In the address bar, type in :  https://karm3nz.github.io/Daily-Scheduler/ and hit "enter" on the keyboard.
 
 ## Usage 
 
